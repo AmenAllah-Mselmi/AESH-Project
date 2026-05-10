@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # AI Detection Service
+  ai-service:
+    build:
+      context: ./services/ai
+      dockerfile: Dockerfile
+    environment:
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_KEY=${SUPABASE_KEY}
+    volumes:
+      - ./services/ai:/app
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  # Next.js Frontend (Production)
+  web-frontend:
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY}
+
+  # Supabase Edge Functions (Local Dev simulation or CLI deployment)
+  # supabase:
+  #   image: supabase/cli
+  #   command: functions serve
