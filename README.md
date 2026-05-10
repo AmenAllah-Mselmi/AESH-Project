@@ -4,8 +4,23 @@
 [![React](https://img.shields.io/badge/React-19.0-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![Supabase](https://img.shields.io/badge/Supabase-Database-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com/)
+[![YOLOv8](https://img.shields.io/badge/AI-YOLOv8-FF2D20?style=for-the-badge&logo=google-cloud)](https://ultralytics.com/)
 
-**Forest Guardian** is a state-of-the-art, AI-powered surveillance and protection system designed to combat illegal logging, poaching, and forest fires using a fleet of autonomous drones and a multi-stakeholder monitoring platform.
+---
+
+## 📝 Project Definition
+**Forest Guardian** is a state-of-the-art, AI-powered surveillance and protection ecosystem designed to preserve the world's most vulnerable forests. By integrating **autonomous drone fleets**, **real-time computer vision**, and a **collaborative multi-actor platform**, the system provides a comprehensive solution for detecting, reporting, and responding to environmental crimes—such as illegal logging, poaching, and forest fires—before they cause irreversible damage.
+
+---
+
+## ✨ Core Features
+-   **🤖 Real-Time AI Detection**: Continuous monitoring of forest zones using YOLOv8 models to identify smoke, vehicles, and illegal tools (chainsaws).
+-   **🚁 Autonomous Fleet Management**: Orchestration of multiple drones with live telemetry, battery tracking, and tactical mission control.
+-   **🤝 Multi-Stakeholder Collaboration**: Unified communication and specific dashboards for Police, Guards, NGOs, and Citizens.
+-   **🗺️ Interactive Tactical Map**: High-resolution geospatial interface with real-time GPS tracking and incident visualization.
+-   **🔔 Intelligent Alert System**: Instant multi-channel notifications (Toasts, SMS, Web) with visual evidence vault.
+-   **📊 Data-Driven Insights**: Advanced analytics and live charts to correlate illegal activity with environmental changes.
+-   **🔐 Legal Admissibility**: Cryptographically sealed incident reports and visual evidence ready for legal proceedings.
 
 ---
 
@@ -18,106 +33,122 @@ The Forest Guardian project addresses the critical need for real-time, scalable,
 The platform features **8 specialized dashboards**, each tailored to the unique needs of different stakeholders:
 
 ### 🛠️ Administrative & Technical
-*   **Admin**: System orchestration, user account provisioning, and platform health monitoring.
-*   **Technician**: Hardware maintenance, drone diagnostics, and system health tracking.
+*   **System Admin**: 
+    *   Full platform orchestration & user account provisioning.
+    *   Server health monitoring & system log analysis.
+    *   Security protocol management.
+*   **Technician**: 
+    *   Hardware maintenance & drone diagnostics.
+    *   Software update deployment & sensor calibration.
+    *   Fleet health tracking.
 
 ### 👮 Enforcement & Protection
-*   **Police**: Real-time crime alerts, suspect tracking, and rapid unit dispatching.
-*   **Forest Guard**: Tactical field operations, GPS-guided incident navigation, and live drone scanning.
+*   **Police Unit**: 
+    *   Real-time crime alerts & suspect tracking.
+    *   Rapid unit dispatching with GPS coordination.
+    *   Blockchain-sealed evidence management.
+*   **Forest Guard**: 
+    *   Tactical field operations & GPS-guided incident navigation.
+    *   Live drone 360° scanning & IR surveillance.
+    *   Emergency SOS signaling.
 
 ### 🌍 Science & Advocacy
-*   **Researchers**: Access to high-resolution datasets and historical correlation analysis.
-*   **NGOs**: Transparency monitoring, carbon impact tracking, and reforestation management.
-*   **Government**: Regional statistics, policy-making insights, and ecological status overviews.
+*   **Researchers**: 
+    *   Access to high-resolution datasets & API-driven data extraction.
+    *   Historical correlation analysis & environmental modeling.
+*   **NGO Partners**: 
+    *   Transparency monitoring & carbon impact tracking.
+    *   Reforestation project management & fundraising tools.
+*   **Government Officials**: 
+    *   Regional statistics & high-level ecological status overviews.
+    *   Policy-making insights based on AI-driven data.
 
 ### 🤝 Community
-*   **Citizen**: Incident reporting (crowdsourcing) and local safety alerts.
+*   **Citizen**: 
+    *   Incident reporting (crowdsourcing) via mobile.
+    *   Local safety alerts & community reward programs.
 
 ---
 
-## ✨ New in v2.0 (Latest Updates)
+## 🧠 Advanced AI Capabilities (YOLOv8 & Beyond)
+Our proprietary AI engine is trained on diverse ecological datasets to provide 24/7 autonomous monitoring.
+
+### 🔍 Vision Detection (Powered by YOLOv8)
+- **Deforestation & Logging**: Real-time detection of tree felling and canopy loss.
+- **Fire & Smoke**: Early-stage wildfire detection with multi-spectral analysis.
+- **Vehicle Monitoring**: Identification of illegal trucks, motorcycles, and heavy machinery.
+- **Human Activity**: Detection of unauthorized human presence in protected "No-Go" zones.
+- **License Plate Recognition (LPR)**: Automated logging of vehicle plates using OpenCV OCR.
+
+### 🛰️ Predictive & Satellite Intelligence
+- **Risk Zone Prediction**: ML algorithms predicting fire/logging risks based on weather patterns.
+- **Night Vision (Thermal/IR)**: Advanced thermal imaging for night monitoring.
+- **Drone Swarm Automation**: Coordinated patrol logic for large-scale area coverage.
+
+---
+
+## ✨ v2.0 Tactical Features
 
 ### 🗺️ Interactive Geospatial Map
-*   **Satellite Imagery**: High-resolution forest mapping for precise tactical awareness.
-*   **Real-time Tracking**: Live GPS positioning for drones and active alert markers.
-*   **Tactical Overlay**: Advanced radar scanners and military-grade grid systems.
+*   **Satellite Imagery Integration**: High-resolution forest mapping for precise awareness.
+*   **Real-time GPS Tracking**: Live positioning for drones and active incident markers.
+*   **Rich Metadata tooltips**: Hover over drones to see battery, altitude, and live coordinates.
 
-### 🔔 Global Notification System
-*   **Real-time Toasts**: Instant high-priority notifications for critical detections (fire, trucks).
-*   **Alert Center**: A dedicated vault for incident history with visual evidence (drone-captured photos).
-*   **Live Badges**: Dynamic sidebar indicators for pending alerts.
+### 🔔 Global Notification Center
+*   **Real-time Toasts**: Instant high-priority alerts with sound signals for critical threats.
+*   **Evidence Vault**: Click any alert to see the **exact image** captured by the drone AI.
+*   **Live Badges**: Dynamic sidebar counters for unread system alerts.
 
-### 📊 Connected Analytics
-*   **Live Charts**: Recharts integration synchronized with the Supabase database.
-*   **Automatic Stats**: Real-time counters for active alerts and drone fleet status.
-
----
-
-## 🧠 Advanced AI Capabilities
-*   **🤖 AI Vision Engine**: Real-time detection of illegal trucks, chainsaws, and smoke/fire.
-*   **🚁 Drone Command Center**: Live telemetry and tactical controls (Radar, IR Scan).
-*   **🔍 Object Recognition**: High-confidence identification of threats using optimized YOLOv8.
+### 🤖 AI Assistant Chatbot
+*   **Context-Aware**: Assistant capable of processing operational queries like "Show me current alerts" or "Weather in Sector 7".
+*   **Command Logic**: Improved keyword detection for rapid system interrogation.
 
 ---
 
 ## 🛠️ Setup & Configuration
 
-### 1. Prerequisites
-*   **Node.js** (v20+)
-*   **Supabase Account** (URL + API Keys)
-*   **Git**
-
-### 2. Database Setup (Supabase)
-1.  **Schema**: Execute the content of [`schema.sql`](./schema.sql) in the Supabase SQL Editor.
-2.  **Initial Data**: Execute [`seed.sql`](./seed.sql) to populate the map with demo drones and alerts.
-3.  **User Seeding**: Run the following in your terminal (`apps/web` folder):
+### 1. Database Setup (Supabase)
+1.  **Tables**: Execute [`schema.sql`](./schema.sql) in your Supabase SQL Editor.
+2.  **Demo Data**: Execute [`seed.sql`](./seed.sql) to populate drones and alerts on the map.
+3.  **User Profiles**: Run the seeding script in `apps/web`:
     ```bash
     npm run seed:users
     ```
 
-### 3. Environment Variables
-Create a `.env.local` file in `apps/web/`:
+### 2. Environment Variables
+Create `.env.local` in `apps/web/`:
 ```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_URL=your_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_service_role_key (Required for seeding)
+SUPABASE_SERVICE_ROLE_KEY=your_service_role (for seeding)
 ```
 
-### 4. Running the Project
+### 3. Installation & Run
 ```bash
+# Frontend
 cd apps/web
 npm install
 npm run dev
+
+# AI Service (Optional for local testing)
+cd services/ai
+pip install -r requirements.txt
+python detection.py
 ```
-Open `http://localhost:3000` to access the console.
 
 ---
 
-## 🔑 Demo Accounts
-All accounts use the password: `password123`
-
+## 🔑 Demo Accounts (All passwords: `password123`)
 | Role | Email |
 | :--- | :--- |
-| **System Admin** | `admin@forest.com` |
-| **Police Unit** | `police@forest.com` |
-| **Forest Guard** | `garde@forest.com` |
-| **Scientist** | `science@forest.com` |
-| **NGO Partner** | `ngo@forest.com` |
-| **Technician** | `tech@forest.com` |
+| **Admin** | `admin@forest.com` |
+| **Police** | `police@forest.com` |
+| **Guard** | `garde@forest.com` |
+| **NGO** | `ngo@forest.com` |
+| **Science** | `science@forest.com` |
+| **Tech** | `tech@forest.com` |
 | **Citizen** | `citizen@forest.com` |
-| **Government** | `gov@forest.com` |
-
----
-
-## 📁 Project Structure
-```text
-forest-guardian-drone/
-├── apps/web/           # Next.js Application (Dashboard & UI)
-├── services/ai/        # AI Detection Service (Python/YOLOv8)
-├── schema.sql          # Database structure
-├── seed.sql            # Initial map data (Drones, Alerts)
-└── README.md           # Documentation
-```
+| **Gov** | `gov@forest.com` |
 
 ---
 
