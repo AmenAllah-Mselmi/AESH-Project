@@ -5,94 +5,120 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![Supabase](https://img.shields.io/badge/Supabase-Database-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com/)
 
-**Forest Guardian** est une plateforme de surveillance forestière de pointe, combinant l'Intelligence Artificielle, le monitoring par drones et une interface tactique multi-acteurs pour protéger nos écosystèmes en temps réel.
+**Forest Guardian** is a state-of-the-art, AI-powered surveillance and protection system designed to combat illegal logging, poaching, and forest fires using a fleet of autonomous drones and a multi-stakeholder monitoring platform.
 
 ---
 
-## 🚀 Fonctionnalités Clés (Mise à jour v2.0)
-
-### 🗺️ Interface Géo-Spatiale Interactive
-*   **Fond Satellite Réel** : Cartographie précise basée sur des images satellites haute résolution.
-*   **Tracking Temps Réel** : Visualisation en direct des drones et des alertes sur la carte avec coordonnées GPS exactes.
-*   **Radar Tactique** : Effets de balayage scanner et grille militaire pour une immersion totale.
-
-### 🔔 Système de Notifications Intelligent
-*   **Toasts Alertes** : Notifications prioritaires apparaissant instantanément lors de toute détection critique.
-*   **Centre d'Alertes** : Un onglet dédié listant l'historique complet des incidents avec preuves visuelles.
-*   **Badge Dynamique** : Indicateur visuel dans la barre latérale pour les alertes non traitées.
-
-### 🤖 Assistant IA & Messagerie
-*   **Chatbot Contextuel** : Un assistant IA capable de répondre à des requêtes opérationnelles (météo, état de la flotte, analyse d'incidents).
-*   **Messagerie d'Équipe** : Système de chat sécurisé entre les différents acteurs (Police, Gardes, Admin).
-
-### 📊 Analytics Connectés
-*   **Live Charts** : Graphiques Recharts synchronisés en temps réel avec la base de données Supabase.
-*   **Statistiques Dynamiques** : Monitoring automatique des alertes actives et de l'état des drones.
+## 🚀 Project Vision
+The Forest Guardian project addresses the critical need for real-time, scalable, and transparent forest monitoring. By combining **Autonomous Drone Technology**, **Computer Vision (YOLOv8)**, and **Global Monitoring Dashboards**, we bridge the gap between environmental threats and rapid law enforcement response.
 
 ---
 
-## 🛠️ Configuration & Installation
+## 👥 Multi-Actor Ecosystem
+The platform features **8 specialized dashboards**, each tailored to the unique needs of different stakeholders:
 
-### 1. Prérequis
+### 🛠️ Administrative & Technical
+*   **Admin**: System orchestration, user account provisioning, and platform health monitoring.
+*   **Technician**: Hardware maintenance, drone diagnostics, and system health tracking.
+
+### 👮 Enforcement & Protection
+*   **Police**: Real-time crime alerts, suspect tracking, and rapid unit dispatching.
+*   **Forest Guard**: Tactical field operations, GPS-guided incident navigation, and live drone scanning.
+
+### 🌍 Science & Advocacy
+*   **Researchers**: Access to high-resolution datasets and historical correlation analysis.
+*   **NGOs**: Transparency monitoring, carbon impact tracking, and reforestation management.
+*   **Government**: Regional statistics, policy-making insights, and ecological status overviews.
+
+### 🤝 Community
+*   **Citizen**: Incident reporting (crowdsourcing) and local safety alerts.
+
+---
+
+## ✨ New in v2.0 (Latest Updates)
+
+### 🗺️ Interactive Geospatial Map
+*   **Satellite Imagery**: High-resolution forest mapping for precise tactical awareness.
+*   **Real-time Tracking**: Live GPS positioning for drones and active alert markers.
+*   **Tactical Overlay**: Advanced radar scanners and military-grade grid systems.
+
+### 🔔 Global Notification System
+*   **Real-time Toasts**: Instant high-priority notifications for critical detections (fire, trucks).
+*   **Alert Center**: A dedicated vault for incident history with visual evidence (drone-captured photos).
+*   **Live Badges**: Dynamic sidebar indicators for pending alerts.
+
+### 📊 Connected Analytics
+*   **Live Charts**: Recharts integration synchronized with the Supabase database.
+*   **Automatic Stats**: Real-time counters for active alerts and drone fleet status.
+
+---
+
+## 🧠 Advanced AI Capabilities
+*   **🤖 AI Vision Engine**: Real-time detection of illegal trucks, chainsaws, and smoke/fire.
+*   **🚁 Drone Command Center**: Live telemetry and tactical controls (Radar, IR Scan).
+*   **🔍 Object Recognition**: High-confidence identification of threats using optimized YOLOv8.
+
+---
+
+## 🛠️ Setup & Configuration
+
+### 1. Prerequisites
 *   **Node.js** (v20+)
-*   **Supabase Project** (URL + Clés API)
+*   **Supabase Account** (URL + API Keys)
 *   **Git**
 
-### 2. Configuration de la Base de Données (Supabase)
-Avant de lancer l'application, configurez votre instance Supabase :
-1.  **Schéma** : Exécutez le contenu de [`schema.sql`](./schema.sql) dans le SQL Editor de Supabase pour créer les tables.
-2.  **Données Initiales** : Exécutez [`seed.sql`](./seed.sql) pour peupler la base avec des drones et des alertes de démonstration.
-3.  **Utilisateurs de Test** : Dans votre terminal (dossier `apps/web`), lancez :
+### 2. Database Setup (Supabase)
+1.  **Schema**: Execute the content of [`schema.sql`](./schema.sql) in the Supabase SQL Editor.
+2.  **Initial Data**: Execute [`seed.sql`](./seed.sql) to populate the map with demo drones and alerts.
+3.  **User Seeding**: Run the following in your terminal (`apps/web` folder):
     ```bash
     npm run seed:users
     ```
 
-### 3. Variables d'Environnement
-Créez un fichier `.env.local` dans `apps/web/` :
+### 3. Environment Variables
+Create a `.env.local` file in `apps/web/`:
 ```env
-NEXT_PUBLIC_SUPABASE_URL=votre_url_supabase
-NEXT_PUBLIC_SUPABASE_ANON_KEY=votre_cle_anon
-SUPABASE_SERVICE_ROLE_KEY=votre_cle_service_role (nécessaire pour le seeding)
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key (Required for seeding)
 ```
 
-### 4. Lancement de l'Application
+### 4. Running the Project
 ```bash
 cd apps/web
 npm install
 npm run dev
 ```
-L'application sera disponible sur `http://localhost:3000`.
+Open `http://localhost:3000` to access the console.
 
 ---
 
-## 👥 Comptes de Démonstration
+## 🔑 Demo Accounts
+All accounts use the password: `password123`
 
-Pour tester les différents tableaux de bord, utilisez les comptes pré-configurés (tous avec le mot de passe : `password123`) :
-
-| Rôle | Email |
+| Role | Email |
 | :--- | :--- |
-| **Administrateur** | `admin@forest.com` |
-| **Police** | `police@forest.com` |
-| **Garde Forestier** | `garde@forest.com` |
-| **Scientifique** | `science@forest.com` |
-| **ONG** | `ngo@forest.com` |
-| **Technicien** | `tech@forest.com` |
-| **Citoyen** | `citizen@forest.com` |
-| **Gouvernement** | `gov@forest.com` |
+| **System Admin** | `admin@forest.com` |
+| **Police Unit** | `police@forest.com` |
+| **Forest Guard** | `garde@forest.com` |
+| **Scientist** | `science@forest.com` |
+| **NGO Partner** | `ngo@forest.com` |
+| **Technician** | `tech@forest.com` |
+| **Citizen** | `citizen@forest.com` |
+| **Government** | `gov@forest.com` |
 
 ---
 
-## 📁 Structure du Projet
-
+## 📁 Project Structure
 ```text
 forest-guardian-drone/
-├── apps/web/           # Application Next.js (Dashboard & UI)
-├── services/ai/        # Service de Détection YOLOv8 (Python)
-├── schema.sql          # Structure de la base de données
-├── seed.sql            # Données de test (Drones, Alertes)
+├── apps/web/           # Next.js Application (Dashboard & UI)
+├── services/ai/        # AI Detection Service (Python/YOLOv8)
+├── schema.sql          # Database structure
+├── seed.sql            # Initial map data (Drones, Alerts)
 └── README.md           # Documentation
 ```
 
 ---
 
-*Développé avec ❤️ pour la protection de nos forêts.*
+*Developed with ❤️ to protect our planet's green lungs.*
