@@ -138,18 +138,5 @@ python detection.py
 
 ---
 
-## 🔑 Demo Accounts (All passwords: `password123`)
-| Role | Email |
-| :--- | :--- |
-| **Admin** | `admin@forest.com` |
-| **Police** | `police@forest.com` |
-| **Guard** | `garde@forest.com` |
-| **NGO** | `ngo@forest.com` |
-| **Science** | `science@forest.com` |
-| **Tech** | `tech@forest.com` |
-| **Citizen** | `citizen@forest.com` |
-| **Gov** | `gov@forest.com` |
-
----
 
 *Developed with ❤️ to protect our planet's green lungs.*
