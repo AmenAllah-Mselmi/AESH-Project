@@ -15,10 +15,14 @@ const ROLES_ALLOWED_FOR_SIGNUP = [
 ];
 
 const DEMO_ACCOUNTS = [
-  { role: 'Admin', email: 'admin@forest.gov', pass: 'admin123', icon: '🛡️' },
-  { role: 'Police', email: 'police@agency.gov', pass: 'police123', icon: '👮' },
-  { role: 'Garde', email: 'guard@forest.gov', pass: 'guard123', icon: '🌲' },
-  { role: 'Tech', email: 'tech@drones.com', pass: 'tech123', icon: '🔧' },
+  { role: 'Admin', email: 'administrator@forest.gov', pass: 'admin123', icon: '🛡️' },
+  { role: 'Police', email: 'commandant@agency.gov', pass: 'police123', icon: '👮' },
+  { role: 'Garde', email: 'ranger@forest.gov', pass: 'guard123', icon: '🌲' },
+  { role: 'NGO', email: 'ngo@nature.org', pass: 'ngo123', icon: '🌍' },
+  { role: 'Science', email: 'science@lab.org', pass: 'science123', icon: '🧬' },
+  { role: 'Tech', email: 'maintenance@drones.com', pass: 'tech123', icon: '🔧' },
+  { role: 'Citizen', email: 'citizen@tunisie.tn', pass: 'citizen123', icon: '👤' },
+  { role: 'Gov', email: 'gov@ministere.gov', pass: 'gov123', icon: '🏛️' },
 ];
 
 export default function AuthForm({ mode }: { mode: AuthMode }) {

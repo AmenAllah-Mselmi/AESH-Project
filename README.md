@@ -1,197 +1,98 @@
-# 🌲 Forest Guardian Drone System
+# 🌲 Forest Guardian Drone System (v2.0)
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.0-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![Supabase](https://img.shields.io/badge/Supabase-Database-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com/)
-[![Python](https://img.shields.io/badge/Python-3.10-3776AB?style=for-the-badge&logo=python)](https://www.python.org/)
-[![YOLOv8](https://img.shields.io/badge/AI-YOLOv8-FF2D20?style=for-the-badge&logo=google-cloud)](https://ultralytics.com/)
 
-**Forest Guardian** is a state-of-the-art, AI-powered surveillance and protection system designed to combat illegal logging, poaching, and forest fires using a fleet of autonomous drones and a multi-stakeholder monitoring platform.
+**Forest Guardian** est une plateforme de surveillance forestière de pointe, combinant l'Intelligence Artificielle, le monitoring par drones et une interface tactique multi-acteurs pour protéger nos écosystèmes en temps réel.
 
 ---
 
-## 🚀 Project Vision (Resume)
+## 🚀 Fonctionnalités Clés (Mise à jour v2.0)
 
-The Forest Guardian project addresses the critical need for real-time, scalable, and transparent forest monitoring. By combining **Autonomous Drone Technology**, **Computer Vision (YOLOv8)**, and **Blockchain-secured Reporting**, we bridge the gap between environmental threats and rapid law enforcement response. Our platform provides a unified command center where citizens, guards, police, and scientists collaborate to protect our planet's green lungs.
+### 🗺️ Interface Géo-Spatiale Interactive
+*   **Fond Satellite Réel** : Cartographie précise basée sur des images satellites haute résolution.
+*   **Tracking Temps Réel** : Visualisation en direct des drones et des alertes sur la carte avec coordonnées GPS exactes.
+*   **Radar Tactique** : Effets de balayage scanner et grille militaire pour une immersion totale.
 
----
+### 🔔 Système de Notifications Intelligent
+*   **Toasts Alertes** : Notifications prioritaires apparaissant instantanément lors de toute détection critique.
+*   **Centre d'Alertes** : Un onglet dédié listant l'historique complet des incidents avec preuves visuelles.
+*   **Badge Dynamique** : Indicateur visuel dans la barre latérale pour les alertes non traitées.
 
-## 👥 Multi-Actor Ecosystem
+### 🤖 Assistant IA & Messagerie
+*   **Chatbot Contextuel** : Un assistant IA capable de répondre à des requêtes opérationnelles (météo, état de la flotte, analyse d'incidents).
+*   **Messagerie d'Équipe** : Système de chat sécurisé entre les différents acteurs (Police, Gardes, Admin).
 
-The platform features **8 specialized dashboards**, each tailored to the unique needs of different stakeholders:
-
-### 🛠️ Administrative & Technical
-*   **Admin**: System orchestration, user account provisioning, and server health monitoring.
-*   **Technician**: Hardware maintenance, drone diagnostics, and software update deployment.
-
-### 👮 Enforcement & Protection
-*   **Police**: Real-time crime alerts, suspect identification, unit dispatching, and management of blockchain-sealed evidence.
-*   **Forest Guard**: Tactical field operations, GPS-guided incident navigation, 360° drone scanning, and IR surveillance.
-
-### 🌍 Science & Advocacy
-*   **Researchers**: Access to high-resolution datasets, API-driven data extraction, and historical correlation analysis.
-*   **NGOs**: Transparency monitoring, conservation advocacy, and regional impact tracking.
-*   **Government**: Regional statistics, policy-making insights, and high-level ecological status overviews.
-
-### 🤝 Community
-*   **Citizen**: Incident reporting (crowdsourcing), local safety alerts, and participation in the **Eco-Citizen Rewards Program**.
+### 📊 Analytics Connectés
+*   **Live Charts** : Graphiques Recharts synchronisés en temps réel avec la base de données Supabase.
+*   **Statistiques Dynamiques** : Monitoring automatique des alertes actives et de l'état des drones.
 
 ---
 
-## ✨ Core Features
+## 🛠️ Configuration & Installation
 
--   **🤖 AI Vision Engine**: Real-time detection of illegal trucks, chainsaws, and smoke/fire using optimized YOLOv8 models.
--   **🚁 Drone Command Center**: Live telemetry, video streaming, and tactical controls (Furtive mode, IR light, Auto-follow).
--   **🔗 Blockchain Integrity**: Every incident report and video evidence is cryptographically sealed to ensure legal admissibility.
--   **🗺️ Interactive Mapping**: Real-time GPS tracking of incidents and patrol units using Leaflet integration.
--   **📊 Data Analytics**: Beautifully rendered charts (Recharts) for correlating environmental data and illegal activities.
--   **📱 Mobile-First Responsive Design**: Premium, glassmorphic UI built with Tailwind CSS 4 and Framer Motion for smooth interactions.
+### 1. Prérequis
+*   **Node.js** (v20+)
+*   **Supabase Project** (URL + Clés API)
+*   **Git**
 
----
+### 2. Configuration de la Base de Données (Supabase)
+Avant de lancer l'application, configurez votre instance Supabase :
+1.  **Schéma** : Exécutez le contenu de [`schema.sql`](./schema.sql) dans le SQL Editor de Supabase pour créer les tables.
+2.  **Données Initiales** : Exécutez [`seed.sql`](./seed.sql) pour peupler la base avec des drones et des alertes de démonstration.
+3.  **Utilisateurs de Test** : Dans votre terminal (dossier `apps/web`), lancez :
+    ```bash
+    npm run seed:users
+    ```
 
-## 🧠 Advanced AI Capabilities
+### 3. Variables d'Environnement
+Créez un fichier `.env.local` dans `apps/web/` :
+```env
+NEXT_PUBLIC_SUPABASE_URL=votre_url_supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY=votre_cle_anon
+SUPABASE_SERVICE_ROLE_KEY=votre_cle_service_role (nécessaire pour le seeding)
+```
 
-Our proprietary AI engine is trained on diverse ecological datasets to provide comprehensive forest protection:
-
-### 🔍 Vision & Sound Detection
-- **Deforestation & Logging**: Real-time detection of tree felling and canopy loss.
-- **Fire & Smoke**: Early-stage wildfire detection with multi-spectral analysis.
-- **Poaching Detection**: Identification of illegal traps, weapons, and unauthorized human presence.
-- **Vehicle Monitoring**: Detection of illegal trucks, motorcycles, and heavy machinery in protected zones.
-- **Chainsaw Sound Recognition**: Audio-based detection of logging activity, even in dense fog or at night.
-
-### 🛰️ Predictive & Satellite Intelligence
-- **Risk Zone Prediction**: Machine learning algorithms that predict high-risk zones for fire or logging based on historical data and weather patterns.
-- **Satellite AI Integration**: Cross-referencing drone data with Sentinel-2 and Landsat-8 imagery for large-scale monitoring.
-- **Night Vision (Thermal/IR)**: Advanced thermal imaging for 24/7 monitoring and heat source tracking.
-- **Drone Swarm Automation**: Multi-drone coordination for synchronized search and rescue or large-area patrol.
-
-### 🎭 Specialized AI Modules
-- **Suspect Facial Recognition**: Identification of known recidivists and blacklisted suspects (integrated with local law enforcement databases).
-  - *⚠️ Only active where legally permitted and according to local privacy laws.*
-- **LPR (License Plate Recognition)**: Automatic reading and logging of vehicle plates using OpenCV OCR to track illegal transport of timber.
-
----
-
-## 🛠️ Common Platform Features
-
-Designed for operational efficiency and seamless collaboration:
-
--   **🔔 Multi-Channel Alerts**: Instant notifications via **Email**, **SMS**, and **WhatsApp** for critical incidents.
--   **🤖 Chatbot Assistance**: 24/7 AI-powered assistant for quick data retrieval and guard support.
--   **📄 Professional Reporting**: Automated **PDF reports** generation for legal evidence and administrative records.
--   **📊 Advanced Analytics**: Real-time dashboards for tracking conservation KPIs and regional progress.
--   **🌙 Optimized UI**: Fully supported **Dark Mode** for reduced eye strain during night monitoring.
--   **🌐 Multi-Language Support**: Localized interfaces to empower global conservation teams.
--   **🔗 Blockchain Proof Storage**: Immutable storage of evidence hashes to prevent tampering.
--   **🆘 Emergency SOS Button**: One-click distress signal for field guards to call for backup.
+### 4. Lancement de l'Application
+```bash
+cd apps/web
+npm install
+npm run dev
+```
+L'application sera disponible sur `http://localhost:3000`.
 
 ---
 
----
+## 👥 Comptes de Démonstration
 
-## 🗺️ 2026-2027 Strategic Roadmap
+Pour tester les différents tableaux de bord, utilisez les comptes pré-configurés (tous avec le mot de passe : `password123`) :
 
-We are constantly evolving. Here is what's coming next:
-
-### 🏛️ Web3 & Green Economy
-- **Smart Contracts (NGO Funding)**: Automating reforestation funding and donation distribution via secure blockchain protocols.
-- **Ecological Marketplace**: A platform for selling **Carbon Credits** and sponsoring verified plantation projects.
-
-### 🎮 Digital Twin & 3D Visualization
-- **Forest Digital Twin**: A high-fidelity 3D replica of the forest (Unity + Cesium) to monitor health states, dead zones, and critical areas in real-time.
-
-### 🛰️ IoT & Hardware Innovation
-- **IoT Sensor Mesh**: Integration of ground sensors for **vibration (chainsaws)**, **air quality**, **humidity**, and **soil health**.
-- **Edge AI Deployment**: Porting detection models to **NVIDIA Jetson Nano** and **Raspberry Pi 5** for zero-latency offline monitoring.
-- **Drone Self-Charging**: Automated solar-powered docking stations for continuous patrol.
-- **Anti-Theft Protection**: GPS-lock, remote shutdown, and "Find My Drone" emergency protocols.
-
-### 💬 Communication & Collaboration
-- **Unified Chat System**: Secure messaging and real-time **Emergency Video Calls** between Police, Guards, Admins, and NGOs.
-- **AI Specialist Chatbots**: Dedicated AI assistants tailored for different operational roles.
-
-### 🦁 Wildlife & Ecology
-- **Wildlife Protection Module**: Specialized AI for tracking threatened species, monitoring migration patterns, and preventing poaching.
-- **Predictive Maintenance**: ML models to predict drone hardware failures before they occur.
-
-### 🏆 Community Engagement
-- **Citizen Gamification**: Badges, leaderboards, and real-world rewards for eco-citizen reports.
-- **Crowdsourced Alerts**: Verified mobile alerts for fire, illegal logging, and suspicious vehicles.
+| Rôle | Email |
+| :--- | :--- |
+| **Administrateur** | `admin@forest.com` |
+| **Police** | `police@forest.com` |
+| **Garde Forestier** | `garde@forest.com` |
+| **Scientifique** | `science@forest.com` |
+| **ONG** | `ngo@forest.com` |
+| **Technicien** | `tech@forest.com` |
+| **Citoyen** | `citizen@forest.com` |
+| **Gouvernement** | `gov@forest.com` |
 
 ---
 
-## 🛠️ Technology Stack
-
-### Frontend (Apps/Web)
--   **Next.js 16**: App Router, Server Components.
--   **React 19**: Modern state management and hooks.
--   **Tailwind CSS 4**: Next-gen styling with zero-runtime overhead.
--   **Framer Motion**: High-performance micro-animations.
--   **Supabase**: Backend-as-a-Service (Auth, Database, Storage).
--   **Lucide React**: Vector-based iconography.
-
-### AI Service (Services/AI)
--   **Python 3.10**: Core logic for vision processing.
--   **Ultralytics (YOLOv8)**: Real-time object detection and classification.
--   **OpenCV**: Image processing and video stream handling.
--   **Docker**: Containerized deployment for scalable AI inference.
-
----
-
-## 📁 Project Structure
+## 📁 Structure du Projet
 
 ```text
 forest-guardian-drone/
-├── apps/
-│   └── web/                # Next.js Frontend Application
-│       ├── src/components/ # Specialized Role Dashboards
-│       └── scripts/        # Database seeding & utilities
-├── services/
-│   └── ai/                 # Python AI Detection Service
-│       └── detection.py    # YOLOv8 implementation
-├── docker-compose.yml      # Infrastructure orchestration
-└── schema.sql              # Supabase/PostgreSQL schema
+├── apps/web/           # Application Next.js (Dashboard & UI)
+├── services/ai/        # Service de Détection YOLOv8 (Python)
+├── schema.sql          # Structure de la base de données
+├── seed.sql            # Données de test (Drones, Alertes)
+└── README.md           # Documentation
 ```
 
 ---
 
-## 🛠️ Getting Started
-
-### Prerequisites
--   Node.js 20+
--   Python 3.10+
--   Docker & Docker Compose
--   Supabase Account
-
-### Installation
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/your-repo/forest-guardian.git
-    cd forest-guardian-drone
-    ```
-
-2.  **Setup Web App**:
-    ```bash
-    cd apps/web
-    npm install
-    cp .env.example .env.local
-    npm run dev
-    ```
-
-3.  **Setup AI Service**:
-    ```bash
-    cd services/ai
-    pip install -r requirements.txt
-    python detection.py
-    ```
-
----
-
-## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-*Developed with ❤️ to protect our forests.*
+*Développé avec ❤️ pour la protection de nos forêts.*

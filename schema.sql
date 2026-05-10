@@ -122,3 +122,19 @@ ON CONFLICT (id) DO NOTHING;
 -- Storage Policies
 CREATE POLICY "Public Access for Alerts" ON storage.objects FOR SELECT USING (bucket_id = 'alerts');
 CREATE POLICY "AI Upload for Alerts" ON storage.objects FOR INSERT WITH CHECK (bucket_id = 'alerts');
+
+-- Messages Table for Team Chat
+CREATE TABLE public.messages (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    sender_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE,
+    receiver_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE,
+    content TEXT NOT NULL,
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- RLS for messages
+ALTER TABLE public.messages ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Users can see their own messages" ON public.messages 
+    FOR SELECT USING (auth.uid() = sender_id OR auth.uid() = receiver_id);
+CREATE POLICY "Users can send messages" ON public.messages 
+    FOR INSERT WITH CHECK (auth.uid() = sender_id);

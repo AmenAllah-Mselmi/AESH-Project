@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Droplets, TrendingUp, Users, Database, PieChart as PieChartIcon, Globe } from 'lucide-react';
+import { Droplets, TrendingUp, Users, Database, PieChart as PieChartIcon, Globe, FileText, Navigation } from 'lucide-react';
 import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip } from 'recharts';
 import { StatCard } from '../shared';
 
