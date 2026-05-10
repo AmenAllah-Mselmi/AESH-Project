@@ -29,28 +29,30 @@ export default function ResearchersDashboard() {
         <StatCard icon={<BarChart3 className="text-green-400" />} label="Modèles Scientifiques" value="08" trend="Accuracy 98.4%" />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 glass-card p-6">
-           <h3 className="font-bold mb-6 flex items-center justify-between">
-             <span>Analyse de Corrélation Historique</span>
-             <button className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[10px] font-bold uppercase tracking-widest hover:text-green-400 transition-colors">Export CSV</button>
-           </h3>
-           <div className="h-[350px]">
-             <ResponsiveContainer width="100%" height="100%">
-               <AreaChart data={alertData}>
-                 <CartesianGrid strokeDasharray="3 3" stroke="#ffffff05" />
-                 <XAxis dataKey="name" stroke="#ffffff20" />
-                 <YAxis stroke="#ffffff20" />
-                 <Tooltip />
-                 <Area type="monotone" dataKey="forest" stroke="#22c55e" fill="#22c55e10" strokeWidth={3} />
-                 <Area type="monotone" dataKey="alerts" stroke="#ef4444" fill="#ef444410" strokeWidth={3} />
-               </AreaChart>
-             </ResponsiveContainer>
-           </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="glass-card p-6 border-amber-500/20">
+          <h3 className="font-bold mb-4 flex items-center gap-2 text-amber-400"><Activity className="w-5 h-5" /> Wildlife Protection Module</h3>
+          <div className="space-y-4">
+             <div className="flex justify-between items-center p-3 bg-white/5 rounded-xl border border-white/5">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
+                  <span className="text-xs font-bold">Migration Elephant - Secteur A</span>
+                </div>
+                <span className="text-[10px] text-white/30 uppercase font-bold">12 Individus</span>
+             </div>
+             <div className="flex justify-between items-center p-3 bg-white/5 rounded-xl border border-white/5 opacity-50">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                  <span className="text-xs font-bold">Alerte Braconnage - Zone Risque</span>
+                </div>
+                <span className="text-[10px] text-white/30 uppercase font-bold">Dernier scan: 2h</span>
+             </div>
+          </div>
+          <button className="w-full mt-6 py-4 bg-amber-500 text-black font-black rounded-xl text-[10px] uppercase tracking-widest">Lancer Analyse Faune AI</button>
         </div>
 
         <div className="glass-card p-6">
-          <h3 className="font-bold mb-6 text-sm uppercase tracking-widest text-white/40">API Documentation</h3>
+          <h3 className="font-bold mb-6 text-sm uppercase tracking-widest text-white/40">API Documentation (v4.2)</h3>
           <div className="bg-black/50 rounded-xl p-4 font-mono text-[11px] text-blue-400 space-y-2 border border-white/5">
              <p className="text-white/20">// Get real-time detections</p>
              <p>GET /api/v1/science/detections</p>
